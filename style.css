@@ -38,21 +38,21 @@ table td {
     position: relative;
 }
 table .sqWall {
-    background: url('/models/sqwall.jpg');
+    background: url('./models/sqwall.jpg');
     background-size: contain;
 }
 table .sqDoor {
-    background: url('/models/sqdoor.jpg');
+    background: url('./models/sqdoor.jpg');
     background-size: contain;
 }
 
 table .sqEmpty {
-    background: url('/models/sqempty.jpg');
+    background: url('./models/sqempty.jpg');
     cursor: pointer;
     background-size: contain;
 }
 table .sqEscape {
-    background: url('/models/sqescape.jpg');
+    background: url('./models/sqescape.jpg');
     cursor: pointer;
     background-size: contain;
 }
