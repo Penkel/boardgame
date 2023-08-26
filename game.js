@@ -96,7 +96,7 @@ export default class Game {
             tr.appendChild(hp)
             let img = document.createElement('td')
             img.classList.add(player.id)
-            img.style.background = `center/ contain no-repeat url('/models/${player.img}')`
+            img.style.background = `center/ contain no-repeat url('./models/${player.img}')`
             tr.appendChild(img)
 
             let stats = ['str', 'agl', 'int']
