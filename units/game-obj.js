@@ -27,7 +27,7 @@ export default class GameObject {
         this.position.x = x;
         this.position.y = y
         let el = document.createElement('img')
-        el.src = `/models/${this.img}`
+        el.src = `./models/${this.img}`
         el.setAttribute('id', this.id)
         getSquare(x,y).appendChild(el)
     }
