@@ -11,8 +11,8 @@ export default class Encounter {
   async startEnc(player, unit) {
     this.active = true
     console.log(unit.name, "встретился с", player.name);
-    document.querySelector(".enc-player-img").src = `/models/${player.img}`;
-    document.querySelector(".enc-unit-img").src = `/models/${unit.img}`;
+    document.querySelector(".enc-player-img").src = `./models/${player.img}`;
+    document.querySelector(".enc-unit-img").src = `./models/${unit.img}`;
     this.renderEncBox(player, unit, 0)
 }
 
