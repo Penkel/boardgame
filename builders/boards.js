@@ -19,7 +19,7 @@ export const boards = [
     {
         name: 'Пещера',
         players: [
-            new Player(2,2,'rogue.JPG', 'Хитрый Разбойник', 2, 3, new Stats(1,3,1, 4)),
+            new Player(2,2,'rogue.jpg', 'Хитрый Разбойник', 2, 3, new Stats(1,3,1, 4)),
             new Player(2,4,'warrior.jpg', 'Сильный Воин', 2, 2, new Stats(2,2,1, 7))
         ],
         units: [
