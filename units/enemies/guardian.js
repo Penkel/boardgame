@@ -3,11 +3,10 @@ import { findPath } from "../pathfinding.js";
 // import NPC from "./npc.js";
 
 export default class Guardian extends GameObject {
-    constructor(x,y,img, name, speed, ap, status){
-    super(x,y,img, name, speed)
+    constructor(x,y, name){
+    super(x,y,'guardian.jpg', name)
         this.maxAp = 1
-        this.ap = 1
-        this.status = 'hunting'
+        this.status = 'patrolling'
         this.encounter = [
                 {
                     enterEffect() {

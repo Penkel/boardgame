@@ -150,14 +150,14 @@ export default class Game {
                 })
                 d.setAttribute('cordX', i)
                 d.setAttribute('cordY', raws.indexOf(raw))
-                d.addEventListener('click', () => {
-                    if(d.classList.contains('sqWall') || this.turn != TURN.PLAYERS) {
-                        console.log('НЕТ!!')
-                    }
-                    else {
-                        this.players[this.currPlayer].move(i, raws.indexOf(raw))
-                    }
-                })
+                // d.addEventListener('click', () => {
+                //     if(d.classList.contains('sqWall') || this.turn != TURN.PLAYERS) {
+                //         console.log('НЕТ!!')
+                //     }
+                //     else {
+                //         this.players[this.currPlayer].move(i, raws.indexOf(raw))
+                //     }
+                // })
                 raw.appendChild(d)
             }
         })

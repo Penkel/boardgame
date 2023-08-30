@@ -24,9 +24,9 @@ export const boards = [
         ],
         units: [
             new RandomEnc(1,9),
-            new Guardian(4,1, 'guardian.jpg', 'Стражник', 2, 1),
-            new Guardian(4,1, 'guardian.jpg', 'Стражник номер два', 2, 1),
-            new Guardian(4,4, 'guardian.jpg', 'Стражник номер Три', 2, 1)
+            new Guardian(4,1, 'Стражник'),
+            new Guardian(4,1, 'Стражник номер два'),
+            new Guardian(4,4,'Стражник номер Три')
         ],
         rngEnc: [
             new CryingLady(),
