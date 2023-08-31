@@ -109,7 +109,8 @@ export default class GameObject {
                     this.game.encounter.startEnc(player, this)
                 }}
         } else {
-        walking: for(let i = 0; this.ap > 0; i++) {
+            console.log(path)
+        walking: for(let i = 0; this.ap > 0 && (this.position.x != path[path.length - 1].x || this.position.y != path[path.length - 1].y); i++) {
             await sleep(1)
             this.move(path[i].x, path[i].y)
             for (let player of this.game.players) {
