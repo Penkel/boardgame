@@ -209,7 +209,9 @@ export default class Game {
             turnInfo.textContent = unit.name
             // await sleep(2)
             unit.ap = unit.maxAp
-            await unit.action()
+            if (typeof unit.action == 'function'){
+                await unit.action()
+            }
             if(this.encounter.active) {
                 break
             }

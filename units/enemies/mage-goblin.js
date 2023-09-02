@@ -1,8 +1,12 @@
+import Game from "../../game.js";
 import GameObject from "../game-obj.js";
+import Totem from "../objects/totem.js";
+import { findPath } from "../pathfinding.js";
 
 export default class MageGoblin extends GameObject {
     constructor(x,y) {
         super(x,y)
+        this.maxAp = 4
         this.img = 'mage goblin.jpg'
         this.status = 'patrolling'
         this.encounter = [
@@ -66,7 +70,23 @@ export default class MageGoblin extends GameObject {
         ]
     }
 
-    action() {
-        
+    async action() {
+        if(!this.game.units.some(u => u.name == 'Тотем')) {
+            console.log('нет тотема')
+            this.totem = new Totem(0,0, this.game)
+            console.log('вот тотем', this.totem)
+            this.totem.respawn()
+            this.ap--
+            console.log('вот тотем', this.totem)
+        }
+        let path = await findPath(this, this.totem, this)
+        await this.pathStep(path)
+        if(this.position.x == this.totem.position.x && this.totem.position.y == this.position.y) {
+            this.game.players.forEach(player => {
+                this.dealDmg(3, player, 'убит заклинанием гоблина-мага')
+                this.totem.removeObject()
+                this.totem.respawn()
+            })
+        }
     }
 }

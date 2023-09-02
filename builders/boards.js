@@ -5,6 +5,7 @@ import RandomEnc from "../units/random-enc.js"
 import CryingLady from "../units/encounters/enc-crying-lady.js"
 import MagicSymbols from "../units/encounters/enc-magic-symbols.js"
 import Skeleton from "../units/enemies/skeleton.js"
+import MageGoblin from "../units/enemies/mage-goblin.js"
 
 class Stats {
     constructor(str, agl, int, hp) {
@@ -24,9 +25,10 @@ export const boards = [
         ],
         units: [
             new RandomEnc(1,9),
-            new Guardian(4,1, 'Стражник'),
-            new Guardian(4,1, 'Стражник номер два'),
-            new Guardian(4,4,'Стражник номер Три')
+            new MageGoblin(1,6)
+            // new Guardian(4,1, 'Стражник'),
+            // new Guardian(4,1, 'Стражник номер два'),
+            // new Guardian(4,4,'Стражник номер Три')
         ],
         rngEnc: [
             new CryingLady(),
