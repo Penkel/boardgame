@@ -1,7 +1,8 @@
 import Game from "../../game.js";
 import GameObject from "../game-obj.js";
 import Totem from "../objects/totem.js";
-import { findPath } from "../pathfinding.js";
+import { findPath, } from "../pathfinding.js";
+import { rng } from "../../utilities.js";
 
 export default class MageGoblin extends GameObject {
     constructor(x,y) {
@@ -32,6 +33,7 @@ export default class MageGoblin extends GameObject {
                 {
                     enterEffect(player, unit) {
                         unit.removeObject()
+                        unit.totem.removeObject()
                     },
                     id: 1,
                     text: 'Попался, маленький гад!',
