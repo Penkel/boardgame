@@ -2,12 +2,13 @@ import Game from "../../game.js";
 import GameObject from "../game-obj.js";
 import Totem from "../objects/totem.js";
 import { findPath, } from "../pathfinding.js";
-import { rng } from "../../utilities.js";
+import { rng, sleep } from "../../utilities.js";
 
 export default class MageGoblin extends GameObject {
     constructor(x,y) {
         super(x,y)
         this.maxAp = 4
+        this.ignores = true
         this.img = 'mage goblin.jpg'
         this.status = 'patrolling'
         this.encounter = [
@@ -87,11 +88,15 @@ export default class MageGoblin extends GameObject {
         let path = await findPath(this, this.totem, this)
         await this.pathStep(path)
         if(this.position.x == this.totem.position.x && this.totem.position.y == this.position.y) {
-            this.game.players.forEach(player => {
+            this.game.sfx.play('magic-explosion.mp3')
+            document.querySelector('.board').classList.add('explode-screen')
+            await sleep(1)
+            this.game.players.forEach(async player => {
                 this.dealDmg(3, player, 'убит заклинанием гоблина-мага')
                 this.totem.removeObject()
                 this.totem.respawn()
             })
+            document.querySelector('.board').classList.remove('explode-screen')
         }
     }
 }

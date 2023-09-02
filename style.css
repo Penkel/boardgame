@@ -144,3 +144,21 @@ table img {
     100% {
     }
 }
+
+.explode-screen {
+    animation: explode 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes explode {
+    0% {
+        filter: contrast(1);
+    }
+    50% {
+        filter: contrast(5);
+    }
+    0% {
+        filter: contrast(1);
+    }
+}

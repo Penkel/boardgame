@@ -3,6 +3,7 @@ import { boards } from "./builders/boards.js";
 import GameObject from "./units/game-obj.js";
 import { sleep } from "./utilities.js";
 import Encounter from './builders/encounter.js'
+import SFX from "./builders/sound.js";
 
 const turnInfo = document.querySelector('.turn-info span')
 console.log(turnInfo)
@@ -18,6 +19,7 @@ export default class Game {
     constructor(board) {
         this.board = board;
         this.encounter = new Encounter(this)
+        this.sfx = new SFX()
         this.rngEnc = board.rngEnc
         this.units = board.units
         console.log(this.units)
@@ -30,6 +32,10 @@ export default class Game {
         }
 
     async start() {
+        // document.querySelector('.test-btn').addEventListener('click', () => {
+        //     this.sfx.play('magic-explosion.mp3')
+        // })
+
         this.buildBoard();
         this.players.forEach(unit => {
             unit.placeObject(unit.position.x, unit.position.y)
