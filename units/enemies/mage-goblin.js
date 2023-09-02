@@ -30,6 +30,9 @@ export default class MageGoblin extends GameObject {
                     ]
                 },
                 {
+                    enterEffect(player, unit) {
+                        unit.removeObject()
+                    },
                     id: 1,
                     text: 'Попался, маленький гад!',
                     options: [
