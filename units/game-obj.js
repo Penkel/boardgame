@@ -66,6 +66,10 @@ export default class GameObject {
 
   action() {}
 
+  chooseRngTarget() {
+    this.target = randomEl(this.game.players)
+  }
+
   move(x, y) {
     if (!getSquare(x, y).classList.contains("sqWall") || this.ghost == true)
       if (this.ap) {
@@ -114,6 +118,7 @@ export default class GameObject {
         ) {
           console.log("евент!");
           this.game.encounter.startEnc(player, this);
+          return
         }
       }
 
@@ -144,7 +149,6 @@ export default class GameObject {
           break;
         }
       }
-    
     console.log("шаги", this.name, "кончились");
   }
 }

@@ -134,6 +134,7 @@ export default class Skeleton extends GameObject {
     }
 
 async action() {
+    if (!this.game.players.some(player => player == this.target)) this.chooseRngTarget()
         let path = findPath(this, this.target, this)
         await this.pathStep(path)
         console.warn(path)
