@@ -1,5 +1,6 @@
 // import Player from "./player.js"
 import { getSquare, randomEl, sleep } from "../utilities.js";
+import { createHoverDescription } from "../builders/descriptions.js";
 
 export default class GameObject {
   constructor(positionX, positionY, img, name, speed) {
@@ -8,6 +9,7 @@ export default class GameObject {
     this.speed = speed;
     this.name = name;
     this.id = Math.random();
+    this.description = 'Тут могло быть описание'
     // this.id = crypto.randomUUID
     this.game;
   }
@@ -28,9 +30,15 @@ export default class GameObject {
     this.position.x = x;
     this.position.y = y;
     let el = document.createElement("img");
+    el.classList.add('with-description')
     el.src = `./models/${this.img}`;
     el.setAttribute("id", this.id);
     getSquare(x, y).appendChild(el);
+
+    let d = document.createElement("div");
+    d.innerHTML = createHoverDescription(this)
+    d.classList.add('hover-description')
+    getSquare(x, y).appendChild(d)
   }
 
   removeObject() {

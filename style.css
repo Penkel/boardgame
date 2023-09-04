@@ -20,6 +20,20 @@ body {
     display: none;
 }
 
+
+.hover-description {
+    z-index: 999;
+    position: absolute;
+    visibility: hidden;
+    background: rgb(158, 157, 157);
+    width: 200px;
+    padding: 10px;
+}
+
+.with-description:hover + .hover-description {
+    visibility: visible;
+}
+
 table {
     border: 1px solid;
     table-layout: fixed;

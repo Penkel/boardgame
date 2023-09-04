@@ -8,9 +8,11 @@ export default class MageGoblin extends GameObject {
     constructor(x,y) {
         super(x,y)
         this.maxAp = 4
+        this.name = 'Гоблин-Маг'
         this.ignores = true
         this.img = 'mage goblin.jpg'
         this.status = 'patrolling'
+        this.description = 'Маг-Голблин создает тотемы и патрулирует их. Не давайте ему трогать тотемы, иначе всем приключенцам будет нанесен урон!'
         this.encounter = [
                 {
                     id: 0,
@@ -77,7 +79,7 @@ export default class MageGoblin extends GameObject {
     }
 
     async action() {
-        if(!this.game.units.some(u => u.name == 'Тотем')) {
+        if (!this.game.units.some(u => u.name == 'Тотем')) {
             console.log('нет тотема')
             this.totem = new Totem(0,0, this.game)
             console.log('вот тотем', this.totem)
