@@ -4,8 +4,8 @@ import { rng } from "../utilities.js";
 
 export default class Player extends GameObject {
   player = true
-  constructor(x, y, img, name, speed, ap, stats) {
-    super(x, y, img, name, speed);
+  constructor(x, y, img, name, ap, stats) {
+    super(x, y, img, name);
     this.maxAp = ap;
     this.ap = this.maxAp;
     this.stats = stats;
@@ -37,7 +37,7 @@ export default class Player extends GameObject {
       img.addEventListener('click', () => {
         console.log('АЙТЕМ ДЕЛАЕТ ДЕЙСТВИЕ!')
         if([...this.game.players].indexOf(this) == this.game.currPlayer)
-        item.onUse()
+        item.onUse()  
       })
     document.querySelector(`[sheet-id="${this.id}"] .item${i}`).appendChild(img)
     })

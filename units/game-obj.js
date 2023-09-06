@@ -3,10 +3,9 @@ import { getSquare, randomEl, sleep } from "../utilities.js";
 import { createHoverDescription } from "../builders/descriptions.js";
 
 export default class GameObject {
-  constructor(positionX, positionY, img, name, speed) {
+  constructor(positionX, positionY, img, name) {
     this.position = { x: positionX, y: positionY };
     this.img = img;
-    this.speed = speed;
     this.name = name;
     this.id = Math.random();
     this.description = 'Тут могло быть описание'

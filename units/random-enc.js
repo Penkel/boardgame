@@ -7,6 +7,7 @@ export default class RandomEnc extends GameObject {
         this.id = Math.random()* this.position.x
         this.game
         this.respawning = true
+        this.description = 'Закончите ход на этой клетке, чтобы получить случайную встречу'
     }
 
     action() {

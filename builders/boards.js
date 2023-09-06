@@ -6,8 +6,10 @@ import CryingLady from "../units/encounters/enc-crying-lady.js"
 import MagicSymbols from "../units/encounters/enc-magic-symbols.js"
 import Skeleton from "../units/enemies/skeleton.js"
 import MageGoblin from "../units/enemies/mage-goblin.js"
+import Rouge from "../player/classes/rogue.js"
+import Warrior from "../player/classes/warrior.js"
 
-class Stats {
+export default class Stats {
     constructor(str, agl, int, hp) {
         this.str = str
         this.agl = agl
@@ -20,8 +22,10 @@ export const boards = [
     {
         name: 'Пещера',
         players: [
-            new Player(2,2,'rogue.jpg', 'Хитрый Разбойник', 2, 3, new Stats(1,3,1, 4)),
-            new Player(2,4,'warrior.jpg', 'Сильный Воин', 2, 2, new Stats(2,2,1, 7))
+            // new Player(2,2,'rogue.jpg', 'Хитрый Разбойник', 2, 3, new Stats(1,3,1, 4)),
+            // new Player(2,4,'warrior.jpg', 'Сильный Воин', 2, 2, new Stats(2,2,1, 7))
+            new Rouge(2,4),
+            new Warrior(2,2)
         ],
         units: [
             new RandomEnc(1,9),
